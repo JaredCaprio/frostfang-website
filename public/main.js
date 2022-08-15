@@ -1,3 +1,5 @@
+/* const { btoa } = require("buffer"); */
+
 const burgerMenu = document.querySelector("[data-burger-menu]");
 const burgerMenuLines = document.querySelectorAll("[data-burger-line]");
 const burgerLinesArray = Array.from(burgerMenuLines);
@@ -70,7 +72,7 @@ async function showsFetch() {
   let resData;
 
   const res = await fetch(
-    "https://rest.bandsintown.com/artists/frostfang/events?app_id=b8175137c070734ae46b70f81b3cbdac&date=past"
+    "https://rest.bandsintown.com/artists/frostfang/events?app_id=b8175137c070734ae46b70f81b3cbdac&date=all"
   );
 
   resData = await res.json();
@@ -149,13 +151,27 @@ async function showsFetch() {
   }
 }
 
-/* 
-fetch(
-  "https://rest.bandsintown.com/artists/frostfang/events?app_id=b8175137c070734ae46b70f81b3cbdac&date=all"
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data[2].venue));
- */
+/* const APIController = (function (){
+  const clientId = 'fe9b60fece8246709b554d2aa836cc17';
+  const clientSecret = 'e81c52e8f5854db2a187e7afedc006a1';
+
+  const _getToken = () => {
+    const result = await fetch("https://account.spotify.com/api/token", {
+    method: 'POST',
+    header: {
+      "Content-Type" : 'application/x-www-form-urlencoded',
+      'Authorization' : 'Basic ' + btoa(clientId + ':' + clientSecret)
+    },
+    body: 'grant-type=client_credentials'
+    });
+
+    const data = await result.json();
+    console.log(data.access_token);
+    return data.access_token
+    
+  }
+})(); */
+
 /* BANDS IN TOWN APP ID FOR API
 b8175137c070734ae46b70f81b3cbdac;
 b8175137c070734ae46b70f81b3cbdac;
