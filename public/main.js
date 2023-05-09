@@ -72,7 +72,7 @@ async function showsFetch() {
   let resData;
 
   const res = await fetch(
-    "https://rest.bandsintown.com/artists/frostfang/events?app_id=b8175137c070734ae46b70f81b3cbdac&date=all"
+    "https://rest.bandsintown.com/artists/frostfang/events?app_id=b8175137c070734ae46b70f81b3cbdac&date=upcoming"
   );
 
   resData = await res.json();
