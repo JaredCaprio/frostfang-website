@@ -270,6 +270,7 @@ header {
 }
 
 .sec-acc-color {
+  font-size: calc(0.65rem + 1vw);
   color: var(--secondary-purple);
 }
 

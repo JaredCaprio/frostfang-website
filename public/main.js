@@ -8,8 +8,15 @@ const mobileNavUlLi = document.querySelectorAll("[data-mobile-nav-ul] li");
 const mobileNavUlArray = Array.from(mobileNavUlLi);
 const heroSection = document.querySelector("[data-hero-section]");
 const tableBody = document.querySelector("[data-table-body]");
+const currentYear = document.querySelector(".current-year");
 
 window.addEventListener("DOMContentLoaded", showsFetch);
+
+(function updateCurrentYear() {
+  const date = new Date();
+
+  currentYear.textContent = date.getFullYear();
+})();
 
 /* mobileNavUlEl.addEventListener("click", (e) => {
   console.log(e.target);
@@ -80,7 +87,7 @@ async function showsFetch() {
   console.log(resData);
 
   if (resData == false) {
-    tableBody.innerHTML = `<td><h1 class="accent-color italic">There are no upcoming concerts</h1></td>`;
+    tableBody.innerHTML = `<td><h1 class="sec-acc-color italic">There are no upcoming concerts</h1></td>`;
   }
 
   var monthNames = [
